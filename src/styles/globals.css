@@ -3,9 +3,11 @@
   --black: #3B434E;
   --white: #fff;
   --primary: #7653FC;
+  --primary-hover: #5632e8;
   --red: #FC836D;
   --green: #1DC37E;
   --light-green: #C8F8E4;
+  --light-gray:#EBEBEB;
   --font-family: 'Noto Sans', sans-serif;
 }
 
