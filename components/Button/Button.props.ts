@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
+import { ButtonHTMLAttributes, DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
 
 export interface ButtonProps 
@@ -6,3 +6,7 @@ export interface ButtonProps
   children: ReactNode;
   appearance: 'primary' | 'ghost';
 }
+
+/*
+export interface ParagrapfProps extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {}
+*/
