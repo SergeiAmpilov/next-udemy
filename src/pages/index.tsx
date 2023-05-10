@@ -13,6 +13,12 @@ export default function Home(): JSX.Element {
         quod dolorum veritatis! Tempora eveniet exercitationem 
         delectus natus veritatis! Sed, voluptates.
       </Paragraph>
+      <Paragraph>
+        Medium size
+      </Paragraph>
+      <Paragraph size="s">
+        Small size
+      </Paragraph>
     </div>
   )
 }
