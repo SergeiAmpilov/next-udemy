@@ -3,7 +3,7 @@ import styles from './Rating.module.css';
 import { RatingProps } from './Rating.props';
 import cn from 'classnames';
 import StarIcon from './star.svg';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, KeyboardEvent } from 'react';
  
 
 
@@ -18,19 +18,30 @@ export const Rating = ({ isEditable = false, rating, setRating,  ...props}: Rati
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map( (r:JSX.Element, i: number) => {
       return (
-      <StarIcon 
-        className={
-          cn(styles.star, {
-            [styles.filled]: i < currentRating,
-            [styles.editable]: isEditable,
-          })
-        }
-        onMouseEnter={ () => changeDisplay(i + 1)}
-        onMouseLeave={ () => changeDisplay(rating)}
-        onClick={ () => {
-          onclick(i + 1)
-        }}
-      />
+        <span
+          className={
+            cn(styles.star, {
+              [styles.filled]: i < currentRating,
+              [styles.editable]: isEditable,
+            })
+          }
+          onMouseEnter={ () => changeDisplay(i + 1)}
+          onMouseLeave={ () => changeDisplay(rating)}
+          onClick={ () => {
+            onclick(i + 1)
+          }}
+        >
+          <StarIcon 
+            
+            tabIndex={isEditable ? 0 : -1}
+            onKeyDown={ (e: KeyboardEvent<SVGElement>) => {
+              if (isEditable && e.code === 'Space' && setRating) {
+                setRating(i + 1);
+              }
+              
+            }}
+          />
+        </span>
       );
     });
     setRatingArray(updatedArray);
