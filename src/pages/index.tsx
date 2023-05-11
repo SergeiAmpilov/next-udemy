@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Htag, Paragraph, Rating, Tag } from "../../components";
+import { Layout } from "../../layout/Layout";
 
 export default function Home(): JSX.Element {
 
@@ -22,7 +23,7 @@ export default function Home(): JSX.Element {
 
 
   return (
-    <div>
+    <Layout>
       <Htag tag='h1'>{counter}</Htag>
       <Button 
         appearance="primary" 
@@ -68,6 +69,6 @@ export default function Home(): JSX.Element {
         rating={rating}
         setRating={setRating}
       />
-    </div>
+    </Layout>
   )
 }
