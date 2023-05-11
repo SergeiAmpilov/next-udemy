@@ -4,6 +4,7 @@ import { Button, Htag, Paragraph, Rating, Tag } from "../../components";
 export default function Home(): JSX.Element {
 
   const [counter, setCounter] = useState<number>(0);
+  const [rating, setRating] = useState<number>(2);
 
   useEffect(() => {
     console.log('Mounted');
@@ -63,9 +64,9 @@ export default function Home(): JSX.Element {
         rem
       </Tag>
       <Rating
-        isEditable={false}
-        rating={3}
-        setRating={() => {}}
+        isEditable={true}
+        rating={rating}
+        setRating={setRating}
       />
     </div>
   )

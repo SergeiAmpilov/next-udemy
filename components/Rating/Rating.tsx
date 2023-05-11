@@ -21,14 +21,32 @@ export const Rating = ({ isEditable = false, rating, setRating,  ...props}: Rati
       <StarIcon 
         className={
           cn(styles.star, {
-            [styles.filled]: i < currentRating
+            [styles.filled]: i < currentRating,
+            [styles.editable]: isEditable,
           })
         }
+        onMouseEnter={ () => changeDisplay(i + 1)}
+        onMouseLeave={ () => changeDisplay(rating)}
+        onClick={ () => {
+          onclick(i + 1)
+        }}
       />
       );
     });
     setRatingArray(updatedArray);
   };
+
+  const changeDisplay = (i: number) => {
+    if (isEditable) {
+      constructRating(i);
+    }
+  }
+
+  const onclick = (i: number) => {
+    if (isEditable && setRating) {
+      setRating(i)
+    }
+  }
 
   return (
     <div {...props}>

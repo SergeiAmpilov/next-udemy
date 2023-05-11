@@ -2,6 +2,11 @@
   margin-right: 5px;
 }
 
+.editable:hover {
+  cursor: pointer;
+}
+
 .filled {
   fill: var(--primary);
 }
+
