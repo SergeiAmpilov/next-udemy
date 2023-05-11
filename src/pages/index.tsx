@@ -30,7 +30,14 @@ export default function Home(): JSX.Element {
         color="green"
         href="#"
       >
-        tag
+        green
+      </Tag>
+      <Tag 
+        size="m"
+        color="red"
+        href="#"
+      >
+        rem
       </Tag>
     </div>
   )
