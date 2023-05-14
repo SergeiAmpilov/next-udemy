@@ -21,7 +21,6 @@ function Home(): JSX.Element {
 
   }, [counter]);
 
-
   return (
     <>
       <Htag tag='h1'>{counter}</Htag>
