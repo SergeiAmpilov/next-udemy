@@ -10,7 +10,13 @@ export const Footer = ({ ...props }: FooterProps): JSX.Element => {
     <div
       {...props}
     >
-      Footer
+      <div className={styles.wrapper}>
+        <div className={styles.copyright}>
+          Owl c 2020-2021 Все права защищены
+        </div>
+        <a href="#" className={styles.agreement}>Пользовательское соглашение</a>
+        <a href="#" className={styles.confident}>Политика конфиденциальности</a>
+      </div>
     </div>
 
   );

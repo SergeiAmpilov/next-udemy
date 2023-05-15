@@ -1,0 +1,33 @@
+.wrapper {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 32px minmax(350px, 3fr) 1fr 1fr 32px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+  ". copyright agreement confident .";
+}
+
+.copyright {
+  grid-area: copyright;
+}
+
+.agreement {
+  grid-area: agreement;
+}
+
+.confident {
+  grid-area: confident;
+}
+
+@media (max-width: 765px) {
+  .wrapper {
+    grid-template-columns: minmax(350px, 1fr);
+    grid-template-areas:
+    "copyright"
+    "agreement"
+    "confident";
+  }
+
+}
