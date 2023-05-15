@@ -4,20 +4,27 @@ import { FooterProps } from './Footer.props';
 import cn from 'classnames';
 
 
-export const Footer = ({ ...props }: FooterProps): JSX.Element => {
+export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
 
   return (
-    <div
+    <footer
+      className={cn(className, styles.wrapper)}
       {...props}
     >
-      <div className={styles.wrapper}>
         <div className={styles.copyright}>
-          Owl c 2020-2021 Все права защищены
+          Owl c 2020-{new Date().getFullYear()} Все права защищены
         </div>
-        <a href="#" className={styles.agreement}>Пользовательское соглашение</a>
-        <a href="#" className={styles.confident}>Политика конфиденциальности</a>
-      </div>
-    </div>
+        <a 
+          href="#"
+          target='_blank'>
+            Пользовательское соглашение
+        </a>
+        <a 
+          target='_blank' 
+          href="#">
+            Политика конфиденциальности
+        </a>
+      </footer>
 
   );
 }

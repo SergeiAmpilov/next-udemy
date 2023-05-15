@@ -1,33 +1,22 @@
 .wrapper {
   background-color: var(--primary);
   color: var(--white);
-  padding: 10px 0;
+  padding: 25px 30px;
   display: grid;
-  grid-template-columns: 32px minmax(350px, 3fr) 1fr 1fr 32px;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-  ". copyright agreement confident .";
+  grid-template-columns: 1fr auto auto;
+  gap: 10px 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
 }
 
-.copyright {
-  grid-area: copyright;
-}
-
-.agreement {
-  grid-area: agreement;
-}
-
-.confident {
-  grid-area: confident;
+.wrapper a:hover {
+  color: var(--light-gray);
 }
 
 @media (max-width: 765px) {
   .wrapper {
-    grid-template-columns: minmax(350px, 1fr);
-    grid-template-areas:
-    "copyright"
-    "agreement"
-    "confident";
+    grid-template-columns: 1fr;
   }
 
 }
