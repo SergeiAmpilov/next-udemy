@@ -12,13 +12,10 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
 
   return (
     <>
-      <Header />
+      <Header />      
+      <Sidebar />
       <div>
-        <Sidebar />
-        <div>
-          {children}
-        </div>
-
+        {children}
       </div>
       <Footer />
     </>
