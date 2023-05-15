@@ -12,6 +12,7 @@
 }
 
 body {
+  margin: 0;
   color: var(--black);
   font-family: var(--font-family);
   background-color: #E5E5E5;
