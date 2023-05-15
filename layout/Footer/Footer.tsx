@@ -25,6 +25,5 @@ export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
             Политика конфиденциальности
         </a>
       </footer>
-
   );
 }
