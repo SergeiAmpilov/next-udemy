@@ -10,23 +10,9 @@ function Home({ menu, firstCategory}: HomeProps): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
   const [rating, setRating] = useState<number>(2);
 
-  useEffect(() => {
-    console.log('Mounted');
-
-    return function cleanup() {
-      console.log('unmount', counter);
-    };
-
-  }, []);
-
-  useEffect(() => {
-    console.log('counter', counter);
-
-  }, [counter]);
-
   return (
     <>
-      <Htag tag='h1'>{counter}</Htag>
+      <Htag tag='h1'>Заголовок</Htag>
       <Button 
         appearance="primary" 
         onClick={ 
