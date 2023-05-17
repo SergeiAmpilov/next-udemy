@@ -19,6 +19,7 @@ export const Rating = ({ isEditable = false, rating, setRating,  ...props}: Rati
     const updatedArray = ratingArray.map( (r:JSX.Element, i: number) => {
       return (
         <span
+          key={i}
           className={
             cn(styles.star, {
               [styles.filled]: i < currentRating,
