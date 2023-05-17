@@ -5,7 +5,7 @@ import { GetStaticProps } from "next";
 import axios from 'axios';
 import { MenuItem } from "../../interfaces/menu.interface";
 
-function Home({ menu, firstCategory}: HomeProps): JSX.Element {
+function Home({ menu, firstCategory }: HomeProps): JSX.Element {
 
   const [counter, setCounter] = useState<number>(0);
   const [rating, setRating] = useState<number>(2);
