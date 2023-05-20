@@ -14,14 +14,12 @@ export const MyAppContext = createContext<IAppContext>({
   firstCategory: TopLevelCategory.Courses
 });
 
-
 export const MyAppContextProvider = ({menu, firstCategory, children}: PropsWithChildren<IAppContext>) => {
 
   const [menuState, setMenuState] = useState<MenuItem[]>(menu);
   const setMenu = (newMenu: MenuItem[]) => {
     setMenuState(newMenu);
   };
-
 
   return <MyAppContext.Provider value={{menu: menuState, firstCategory}}>
     {children}
