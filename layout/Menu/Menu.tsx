@@ -46,17 +46,17 @@ export const Menu = (): JSX.Element => {
   const buildFirstLevel = () => {
     return (
       <>
-        { firstLevelMenu.map( (menu) => (
-          <div key={menu.route}>
-            <a href={`/${menu.route}`}>
+        { firstLevelMenu.map( (m) => (
+          <div key={m.route}>
+            <a href={`/${m.route}`}>
               <div className={cn(styles.firstLevel, {
-                [styles.firstLevelActive]: menu.id === firstCategory,
+                [styles.firstLevelActive]: m.id === firstCategory,
               })}>
-                {menu.icon}
-                <span>{menu.name}</span>
+                {m.icon}
+                <span>{m.name}</span>
               </div>
             </a>
-            { menu.id === firstCategory && buildSecondLevel(menu) }
+            { m.id === firstCategory && buildSecondLevel(m) }
           </div>
         ) ) }
       </>
