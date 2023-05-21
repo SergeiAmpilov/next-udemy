@@ -3,8 +3,9 @@ import { TopLevelCategory } from "./page.interface"
 export interface MenuItem {
   _id: {
     secondCategory: string
-  }
-  pages: PageItem[]
+  };
+  isOpened?: boolean;
+  pages: PageItem[];
 }
 
 
