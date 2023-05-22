@@ -26,7 +26,6 @@
   cursor: pointer;
   text-transform: uppercase;
   color: var(--dark-gray);
-
   font-weight: 300;
   font-size: 12px;
   line-height: 16px;
@@ -44,11 +43,9 @@
   margin-bottom: 10px;
   cursor: pointer;
   color: var(--dark-grey);
-
   font-weight: 500;
   font-size: 14px;
   line-height: 19px;
-
   text-decoration: none;
 }
 
