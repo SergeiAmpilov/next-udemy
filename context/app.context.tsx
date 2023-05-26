@@ -21,7 +21,7 @@ export const MyAppContextProvider = ({menu, firstCategory, children}: PropsWithC
     setMenuState(newMenu);
   };
 
-  return <MyAppContext.Provider value={{menu: menuState, firstCategory}}>
+  return <MyAppContext.Provider value={{menu: menuState, firstCategory, setMenu}}>
     {children}
   </MyAppContext.Provider>;
 };
