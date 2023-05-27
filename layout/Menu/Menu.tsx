@@ -53,8 +53,7 @@ export const Menu = (): JSX.Element => {
       }
       return m;
     }));
-  };
-  
+  };  
 
   const buildFirstLevel = () => {
     return (

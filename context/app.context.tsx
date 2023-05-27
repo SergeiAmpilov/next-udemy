@@ -1,7 +1,6 @@
 import { ReactNode, createContext, useState, PropsWithChildren } from "react";
 import { MenuItem } from "../interfaces/menu.interface";
 import { TopLevelCategory } from "../interfaces/page.interface";
-// import { AppContext } from "next/app";
 
 export interface IAppContext {
   menu: MenuItem[];
