@@ -74,6 +74,7 @@ export const Menu = (): JSX.Element => {
       </>
     );
   };
+
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
     return (
       <div className={styles.secondBlock}>
@@ -123,7 +124,6 @@ export const Menu = (): JSX.Element => {
   return (
    <div className={styles.menu}>
     { buildFirstLevel() }
-
    </div>
   );
 }
