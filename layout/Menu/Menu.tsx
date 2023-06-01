@@ -39,7 +39,6 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
   },
 ];
 
-
 export const Menu = (): JSX.Element => {
 
   const { menu , setMenu, firstCategory} = useContext(MyAppContext);
