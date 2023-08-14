@@ -8,7 +8,6 @@ export interface MenuItem {
   pages: PageItem[];
 }
 
-
 export interface PageItem {
   alias: string
   title: string
