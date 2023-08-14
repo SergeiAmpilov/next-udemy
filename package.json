@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "debug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -23,6 +24,7 @@
     "@next/eslint-plugin-next": "^13.4.13",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.47.0",
     "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",

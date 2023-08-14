@@ -2,10 +2,12 @@ import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home(): JSX.Element {
+  const a = 1;
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
+          { a }
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>
         </p>
