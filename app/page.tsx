@@ -1,5 +1,16 @@
 import Image from 'next/image';
 import styles from './page.module.css';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'My app ppage',
+};
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Computed title',
+  };
+}
 
 export default function Home(): JSX.Element {
   const a = 1;
