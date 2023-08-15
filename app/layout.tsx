@@ -1,8 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { 
+  // Inter, 
+  Open_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin', 'cyrillic'] });
+const openSansFont = Open_Sans({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
   title: 'My top app',
@@ -17,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={inter.className}>{children}</body>
+      <body className={openSansFont.className}>{children}</body>
     </html>
   );
 }
