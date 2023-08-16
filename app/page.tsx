@@ -1,4 +1,4 @@
-import { Htag } from '@/components';
+import { Button, Htag } from '@/components';
 import { Metadata } from 'next';
 import React from 'react';
 
@@ -17,6 +17,8 @@ export default function Home(): JSX.Element {
     <div>
       <Htag tag='h1'>Привет, мир</Htag>
       <Htag tag='h2'>Hello world</Htag>
+      <Button appearance='primary'>Главная кнопка</Button>
+      <Button appearance='ghost'>Прозрачная кнопка</Button>
     </div>
   );
 }
