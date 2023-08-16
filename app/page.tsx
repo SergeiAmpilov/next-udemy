@@ -1,5 +1,6 @@
 // import Image from 'next/image';
 // import styles from './page.module.css';
+import { Htag } from '@/components';
 import { Metadata } from 'next';
 import React from 'react';
 
@@ -16,7 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home(): JSX.Element {
   return (
     <div>
-      <h1>Hello world</h1>
+      <Htag tag='h1'>Привет, мир</Htag>
+      <Htag tag='h2'>Hello world</Htag>
     </div>
   );
 }
