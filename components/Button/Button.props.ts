@@ -6,4 +6,4 @@ export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTML
 }
 
 // example for <p>:
-// type DetailedHTMLProps<ParamHTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>;
+// type DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>;
