@@ -1,5 +1,3 @@
-// import Image from 'next/image';
-// import styles from './page.module.css';
 import { Htag } from '@/components';
 import { Metadata } from 'next';
 import React from 'react';
