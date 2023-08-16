@@ -4,3 +4,6 @@ export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTML
   children: ReactNode;
   appearance: 'primary' | 'ghost';
 }
+
+// example for <p>:
+// type DetailedHTMLProps<ParamHTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>;
