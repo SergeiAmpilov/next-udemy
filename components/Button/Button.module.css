@@ -37,3 +37,19 @@
   color: var(--white);
   background-color: var(--primary);
 }
+
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+
+}
+
+.arrowright {
+
+}
+
+
+.arrowdown {
+  transform: rotate(90deg);
+  transition: all .2s ease;
+}

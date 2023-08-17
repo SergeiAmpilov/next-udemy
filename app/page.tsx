@@ -18,8 +18,8 @@ export default function Home(): JSX.Element {
     <div>
       <Htag tag='h1'>Привет, мир</Htag>
       <Htag tag='h2'>Hello world</Htag>
-      <Button appearance='primary'>Главная кнопка</Button>
-      <Button appearance='ghost'>Прозрачная кнопка</Button>
+      <Button appearance='primary' arrow='right'>Главная кнопка</Button>
+      <Button appearance='ghost' arrow='down'>Прозрачная кнопка</Button>
       <div>
         <Logo />
       </div>
