@@ -1,4 +1,4 @@
-import { Button, Htag, Ptag } from '@/components';
+import { Button, Htag, Ptag, Tag } from '@/components';
 import { Metadata } from 'next';
 import React from 'react';
 import Logo from '../public/Group13.svg';
@@ -32,6 +32,8 @@ export default function Home(): JSX.Element {
       <Ptag size='l'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus, explicabo minima ratione esse doloremque, saepe, at dicta fugiat temporibus nesciunt. Cumque unde repudiandae perspiciatis? Rem fugit laudantium corrupti voluptatibus ex accusamus, dolorum, dignissimos modi beatae debitis quae laborum fugiat.
       </Ptag>
+      <Tag size='m' color='green'>Green</Tag>
+      <Tag size='s' color='ghost' href='https://github.com/AlariCode/top-app-demo/blob/main/next.config.js'>Green</Tag>
     </div>
   );
 }
