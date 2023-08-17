@@ -1,6 +1,7 @@
 import { Button, Htag } from '@/components';
 import { Metadata } from 'next';
 import React from 'react';
+import Logo from '../public/Group13.svg';
 
 export const metadata: Metadata = {
   title: 'My app ppage',
@@ -19,6 +20,9 @@ export default function Home(): JSX.Element {
       <Htag tag='h2'>Hello world</Htag>
       <Button appearance='primary'>Главная кнопка</Button>
       <Button appearance='ghost'>Прозрачная кнопка</Button>
+      <div>
+        <Logo />
+      </div>
     </div>
   );
 }
