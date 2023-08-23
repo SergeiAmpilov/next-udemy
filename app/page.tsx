@@ -35,10 +35,10 @@ export default function Home(): JSX.Element {
       <Tag size='m' color='green'>Green</Tag>
       <Tag size='s' color='ghost' href='https://github.com/AlariCode/top-app-demo/blob/main/next.config.js'>Green</Tag>
       <div>
-        <Rating 
-          rating={3}
-          
-        />
+        <Rating rating={3} />
+      </div>
+      <div>
+        <Rating rating={2} />
       </div>
     </div>
   );
