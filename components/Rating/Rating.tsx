@@ -17,6 +17,13 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
     constructRating(n);
   };
 
+  const handleClick = (n: number) => {
+    if (!isEditable || !setRating) {
+      return ;
+    }
+    setRating(n);
+  };
+
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (        
@@ -28,6 +35,7 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
             })}
             onMouseEnter={ () => { changeDisplay(i + 1) } }
             onMouseLeave={ () => { changeDisplay(rating) } }
+            onClick={ () => { handleClick(i+1) }}
           />        
         );
     });

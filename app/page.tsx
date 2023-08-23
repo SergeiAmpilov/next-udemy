@@ -1,6 +1,8 @@
+'use client'
+
 import { Button, Htag, Ptag, Rating, Tag } from '@/components';
 import { Metadata } from 'next';
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../public/Group13.svg';
 
 export const metadata: Metadata = {
@@ -14,6 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home(): JSX.Element {
+
+  const [rating, setRating] = useState<number>(2);
+
   return (
     <div>
       <Htag tag='h1'>Привет, мир</Htag>
@@ -38,7 +43,7 @@ export default function Home(): JSX.Element {
         <Rating rating={3} />
       </div>
       <div>
-        <Rating rating={2} isEditable={true} />
+        <Rating rating={rating} isEditable={true} setRating={setRating} />
       </div>
     </div>
   );
