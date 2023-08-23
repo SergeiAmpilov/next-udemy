@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, KeyboardEvent } from 'react';
 import { RatingProps } from './Rating.props';
 import StarSvg from './star.svg';
 import cn from 'classnames';
@@ -24,6 +24,13 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
     setRating(n);
   };
 
+  const handleSpace = (n: number, e: KeyboardEvent) => {
+    if (e.code != 'Space' || !setRating) {
+      return ;
+    }
+    setRating(n);
+  }
+
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (        
@@ -36,7 +43,13 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
             onMouseEnter={ () => { changeDisplay(i + 1) } }
             onMouseLeave={ () => { changeDisplay(rating) } }
             onClick={ () => { handleClick(i+1) }}
-          />        
+            tabIndex={ isEditable ? 0 : -1 }
+            onKeyDown={ (e: KeyboardEvent) => {
+              if (isEditable) {
+                handleSpace(i + 1, e)
+              }
+            }}
+          />
         );
     });
     setRatingArray(updatedArray)
