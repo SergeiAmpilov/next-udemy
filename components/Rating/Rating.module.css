@@ -5,3 +5,8 @@
 .base {
   fill: var(--gray-light);
 }
+
+
+.star {
+  cursor: pointer;
+}

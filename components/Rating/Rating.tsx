@@ -12,30 +12,29 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
 
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
-      return (
-        <span className={cn({
-          [styles.base]: i >= rating,
-          [styles.filled]: i < rating,
-        })}>
-          <StarSvg />
-        </span>
+      return (        
+          <StarSvg
+            className={cn(styles.star, {
+              [styles.base]: i >= rating,
+              [styles.filled]: i < rating,
+            })}
+          />        
         );
-    })
-
+    });
     setRatingArray(updatedArray)
   };
 
 
   useEffect(() => {
     constructRating(rating);
-  },[]);
+  }, [rating]);
 
   return (
     <div
       className={ cn(className) }
       {...props}
     >
-      { ratingArray }
+      { ratingArray.map((r, i) => <span key={i}>{r}</span> ) }
     </div>
   );
 }
