@@ -6,12 +6,10 @@
   fill: var(--gray-light);
 }
 
-
-.star {
-  margin-right: 5px;
-}
-
-
 .editable {
   cursor: pointer;
+}
+
+.wrapper {
+  padding-right: 5px;;
 }
