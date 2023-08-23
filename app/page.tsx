@@ -1,4 +1,4 @@
-import { Button, Htag, Ptag, Tag } from '@/components';
+import { Button, Htag, Ptag, Rating, Tag } from '@/components';
 import { Metadata } from 'next';
 import React from 'react';
 import Logo from '../public/Group13.svg';
@@ -34,6 +34,12 @@ export default function Home(): JSX.Element {
       </Ptag>
       <Tag size='m' color='green'>Green</Tag>
       <Tag size='s' color='ghost' href='https://github.com/AlariCode/top-app-demo/blob/main/next.config.js'>Green</Tag>
+      <div>
+        <Rating 
+          rating={3}
+          
+        />
+      </div>
     </div>
   );
 }

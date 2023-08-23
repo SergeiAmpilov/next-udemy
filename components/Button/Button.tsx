@@ -3,7 +3,6 @@ import { ButtonProps } from './Button.props';
 import cn from 'classnames';
 
 import ArrowImg from './arrow.svg';
-import { useEffect, useState } from 'react';
 
 export const Button = ({ appearance, arrow = 'none', children, className, ...props}: ButtonProps): JSX.Element => {
 
