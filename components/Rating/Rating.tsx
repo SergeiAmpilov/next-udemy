@@ -10,14 +10,24 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
 
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
+  const changeDisplay = (n: number) => {
+    if (!isEditable) {
+      return ;
+    }
+    constructRating(n);
+  };
+
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (        
           <StarSvg
             className={cn(styles.star, {
-              [styles.base]: i >= rating,
-              [styles.filled]: i < rating,
+              [styles.base]: i >= currentRating,
+              [styles.filled]: i < currentRating,
+              [styles.editable]: isEditable,
             })}
+            onMouseEnter={ () => { changeDisplay(i + 1) } }
+            onMouseLeave={ () => { changeDisplay(rating) } }
           />        
         );
     });

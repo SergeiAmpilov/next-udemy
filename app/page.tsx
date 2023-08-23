@@ -38,7 +38,7 @@ export default function Home(): JSX.Element {
         <Rating rating={3} />
       </div>
       <div>
-        <Rating rating={2} />
+        <Rating rating={2} isEditable={true} />
       </div>
     </div>
   );
