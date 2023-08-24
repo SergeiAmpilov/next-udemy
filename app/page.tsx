@@ -5,9 +5,9 @@ import { Metadata } from 'next';
 import React, { useState } from 'react';
 import Logo from '../public/Group13.svg';
 
-export const metadata: Metadata = {
-  title: 'My app ppage',
-};
+// export const metadata: Metadata = {
+//   title: 'My app ppage',
+// };
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -19,7 +19,7 @@ export default function Home(): JSX.Element {
 
   const [rating, setRating] = useState<number>(2);
 
-  return (
+  const oldMarkdown: JSX.Element = (
     <div>
       <Htag tag='h1'>Привет, мир</Htag>
       <Htag tag='h2'>Hello world</Htag>
@@ -46,5 +46,12 @@ export default function Home(): JSX.Element {
         <Rating rating={rating} isEditable={true} setRating={setRating} />
       </div>
     </div>
+  );
+
+
+  return (
+    <main>
+      <h1>This is main page</h1>
+    </main>
   );
 }
