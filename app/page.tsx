@@ -49,9 +49,5 @@ export default function Home(): JSX.Element {
   );
 
 
-  return (
-    <main>
-      <h1>This is main page</h1>
-    </main>
-  );
+  return oldMarkdown;
 }
