@@ -4,6 +4,11 @@ import styles from './header.module.css'
 
 export default function Header({ children, ...props }: HeaderProps): JSX.Element {
   return (
-    <></>
+    <header
+      {...props}
+    >
+      Header
+      {children}
+    </header>
   );
 }
