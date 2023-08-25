@@ -7,6 +7,7 @@ import Header from '@/components/Header/header';
 import Sidebar from '@/components/Sidebar/sidebar';
 import Footer from '@/components/Footer/footer';
 import { FunctionComponent } from 'react';
+import cn from 'classnames';
 
 
 const notoSansFont = Noto_Sans({ 
@@ -24,15 +25,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="ru">
-      <body className={notoSansFont.className}>
-        <Header />
-        <div>
-          <Sidebar />
-          <div>
-            {children}
-          </div>
-        </div>
-        <Footer />
+      <body className={cn(notoSansFont.className, styles.wrapper)}>
+        <Header className={styles.header} />
+        <Sidebar className={styles.sidebar} />
+        <main className={styles.body}>
+          {children}
+        </main>
+        <Footer className={styles.footer} />
       </body>
     </html>
   );
