@@ -7,6 +7,7 @@
 	display: grid;
 	grid-template-columns: auto 230px minmax(320px, 1200px) auto;
 	grid-template-rows: auto 1fr auto;
+	gap: 0 30px;
 	min-height: 100vh;
 	grid-template-areas:
 		". header header ."
@@ -25,20 +26,7 @@
 }
 
 .footer {
-	padding: 25px;
 	grid-area: footer;
-
-	color: var(--white);
-	background-color: var(--primary);
-
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: normal;
-
-	display: grid;
-	grid-template-columns: 3fr 1fr 1fr;
-	gap: 20px;
 }
 
 .body {

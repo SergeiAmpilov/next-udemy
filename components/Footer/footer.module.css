@@ -3,3 +3,28 @@
   color: var(--white);
   text-decoration: none;
 }
+
+
+.footer {
+	padding: 25px 30px;
+
+	color: var(--white);
+	background-color: var(--primary);
+
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	gap: 20px;
+}
+
+@media (max-width: 765px) {
+  .footer {
+		padding: 10px 15px;
+		gap: 10px;
+		grid-template-columns: 1fr;
+	}
+}
