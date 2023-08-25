@@ -4,7 +4,6 @@
   text-decoration: none;
 }
 
-
 .footer {
 	padding: 25px 30px;
 
@@ -19,6 +18,10 @@
 	display: grid;
 	grid-template-columns: 1fr auto auto;
 	gap: 20px;
+}
+
+.footerlink:hover {
+  color: var(--green-light);
 }
 
 @media (max-width: 765px) {
