@@ -25,7 +25,20 @@
 }
 
 .footer {
+	padding: 25px;
 	grid-area: footer;
+
+	color: var(--white);
+	background-color: var(--primary);
+
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+
+	display: grid;
+	grid-template-columns: 3fr 1fr 1fr;
+	gap: 20px;
 }
 
 .body {
@@ -39,8 +52,7 @@
 		"header"
 		"body"
 		"footer"
-	;
-
+		;
 	}
 	.sidebar {
 		display: none;
@@ -48,5 +60,11 @@
 
 	.header {
 		display: block;
+	}
+
+	.footer {
+		padding: 10px;
+		gap: 10px;
+		grid-template-columns: 1fr;
 	}
 }

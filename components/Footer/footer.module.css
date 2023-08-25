@@ -1,0 +1,5 @@
+.footerlink,
+.footerlink:visited {
+  color: var(--white);
+  text-decoration: none;
+}

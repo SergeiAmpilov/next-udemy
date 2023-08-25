@@ -7,8 +7,9 @@ export default function Footer({ children, ...props }: FooterProps): JSX.Element
     <footer
       {...props}
     >
-      Footer
-      {children}
+      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, vel?</span>
+      <a href="#" className={styles.footerlink}>Пользовательское соглашение</a>
+      <a href="#" className={styles.footerlink}>Политика конфиденциальности</a>
     </footer>
   );
 }
