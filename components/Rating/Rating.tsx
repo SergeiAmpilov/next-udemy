@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useEffect, useState, KeyboardEvent } from 'react';
 import { RatingProps } from './Rating.props';
@@ -29,7 +29,7 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
       return ;
     }
     setRating(n);
-  }
+  };
 
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
@@ -56,7 +56,7 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
         </span>
         );
     });
-    setRatingArray(updatedArray)
+    setRatingArray(updatedArray);
   };
 
 
@@ -72,4 +72,4 @@ export const Rating = ({className, isEditable = false, setRating, rating, ...pro
       { ratingArray.map((r, i) => <span key={i}>{r}</span> ) }
     </div>
   );
-}
+};

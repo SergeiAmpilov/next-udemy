@@ -23,4 +23,4 @@ export const Tag = ({ color='ghost', size='s', className, href, children, ...pro
       
     </div>
   );
-}
+};
