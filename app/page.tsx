@@ -1,9 +1,11 @@
-'use client'
+// 'use client'
 
-import { Button, Htag, Ptag, Rating, Tag } from '@/components';
+import { Button, Htag, Menu, Ptag, Rating, Tag } from '@/components';
 import { Metadata } from 'next';
 import React, { useState } from 'react';
 import Logo from '../public/Group13.svg';
+import { API } from './api';
+import { MenuItem } from '@/interfaces/menu.interface';
 
 // export const metadata: Metadata = {
 //   title: 'My app ppage',
@@ -15,14 +17,22 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function Home(): JSX.Element {
 
-  const [rating, setRating] = useState<number>(2);
 
-  console.log('I am home');
+
+
+export default async function Home(): Promise<JSX.Element> {
+
+  // const [rating, setRating] = useState<number>(2);
+
 
   const oldMarkdown: JSX.Element = (
     <div>
+
+      <div>
+        here i neeed menu
+        <Menu />
+      </div>
       <Htag tag='h1'>Привет, мир</Htag>
       <Htag tag='h2'>Hello world</Htag>
       <Button appearance='primary' arrow='right'>Главная кнопка</Button>
@@ -45,7 +55,7 @@ export default function Home(): JSX.Element {
         <Rating rating={3} />
       </div>
       <div>
-        <Rating rating={rating} isEditable={true} setRating={setRating} />
+        {/* <Rating rating={rating} isEditable={true} setRating={setRating} /> */}
       </div>
     </div>
   );

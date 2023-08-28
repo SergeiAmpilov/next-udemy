@@ -6,3 +6,4 @@ export * from './Rating/Rating';
 export * from './Sidebar/sidebar';
 export * from './Header/header';
 export * from './Footer/footer';
+export * from './Menu/menu';
