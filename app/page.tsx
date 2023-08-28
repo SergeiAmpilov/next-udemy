@@ -19,6 +19,8 @@ export default function Home(): JSX.Element {
 
   const [rating, setRating] = useState<number>(2);
 
+  console.log('I am home');
+
   const oldMarkdown: JSX.Element = (
     <div>
       <Htag tag='h1'>Привет, мир</Htag>
