@@ -29,10 +29,8 @@ export default async function Home(): Promise<JSX.Element> {
   const oldMarkdown: JSX.Element = (
     <div>
 
-      <div>
-        here i neeed menu
-        <Menu />
-      </div>
+      <Menu category={0} />
+      
       <Htag tag='h1'>Привет, мир</Htag>
       <Htag tag='h2'>Hello world</Htag>
       <Button appearance='primary' arrow='right'>Главная кнопка</Button>
