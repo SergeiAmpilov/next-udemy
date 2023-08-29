@@ -43,7 +43,8 @@ export default async function ProductCard({ params } : { params: { alias: string
 
       <p>alias: { params.alias }</p>
       <p>{ page.title }</p>
-      <hr />      
+      <hr />
+      <h3>Продукты:</h3>
       <ul>
         { products.map( p => (
           <li key={p._id}>
