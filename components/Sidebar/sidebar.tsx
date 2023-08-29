@@ -1,21 +1,16 @@
-'use client';
-
 import { SidebarProps } from "./sidebar.props";
 import styles from './sidebar.module.css';
-import { createContext } from "react";
+import { Menu } from "../Menu/menu";
 
-const SidebarContext = createContext({});
 
 
 export default function Sidebar({ children, ...props }: SidebarProps): JSX.Element {
   return (
-    <SidebarContext.Provider value={{}}>
       <div
         {...props}
       >
-        Sidebar
+        <Menu />
         {children }
       </div>
-    </SidebarContext.Provider>
   );
 }

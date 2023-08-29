@@ -15,8 +15,6 @@ export async function getProduct(category: string): Promise<ProductModel[]> {
     headers: new Headers({'content-type': 'application/json'}),
   });
 
-  console.log(category, res);
-
   if (!res.ok) {
     return [];
   }

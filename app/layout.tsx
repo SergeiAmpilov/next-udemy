@@ -8,6 +8,7 @@ import Sidebar from '@/components/Sidebar/sidebar';
 import Footer from '@/components/Footer/footer';
 import { FunctionComponent } from 'react';
 import cn from 'classnames';
+import { AppContextProvider, IAppContext } from '@/context/app.context';
 
 
 const notoSansFont = Noto_Sans({ 
@@ -39,12 +40,14 @@ export default function RootLayout({ children }: LayoutProps) {
 
 
 
-export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
   return function withLayoutComponent (props: T): JSX.Element {
     return (
-      <RootLayout>
-        <Component {...props } />
-      </RootLayout>
+      <AppContextProvider menu={ props.menu } firstCategory={ props.firstCategory}>
+        <RootLayout>
+          <Component {...props } />
+        </RootLayout>
+      </AppContextProvider>
     );
   }
 }

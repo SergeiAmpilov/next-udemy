@@ -39,7 +39,6 @@ export default async function ProductCard({ params } : { params: { alias: string
   return (
     <div>
       <h3>Products card detail page</h3>
-      <Menu category={0} />
 
       <p>alias: { params.alias }</p>
       <p>{ page.title }</p>

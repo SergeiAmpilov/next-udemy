@@ -4,7 +4,7 @@ import cn from 'classnames';
 import styles from './Menu.module.css';
 import { MenuItem } from "@/interfaces/menu.interface";
 
-export async function Menu({ category = 0, className, children, ...props }: MenuProps): Promise<JSX.Element> {
+export async function Menu({ category = 0, className, ...props }: MenuProps): Promise<JSX.Element> {
 
   const menu: MenuItem[] = await getMenu(category);
   
@@ -18,7 +18,6 @@ export async function Menu({ category = 0, className, children, ...props }: Menu
           menu.map((m, i) => (<li key={i}>{m._id.secondCategory}</li>)) 
         }
       </ul>
-      { children }
     </div>
   );
 
