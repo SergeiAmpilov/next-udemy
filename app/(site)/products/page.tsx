@@ -5,6 +5,8 @@ export const metadata: Metadata = {
 }
 
 
+
+
 export default function ProductList(): JSX.Element {
   return (
     <div>
