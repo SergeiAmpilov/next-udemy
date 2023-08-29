@@ -10,11 +10,9 @@ export async function getMenu(firstCategory: number): Promise<MenuItem[]> {
     }),
     headers: new Headers({'content-type': 'application/json'}),
     next: {
-      revalidate: 10
+      revalidate: 600
     }
   });
-
-  console.log('gen menu', firstCategory);
 
   return res.json();
 }

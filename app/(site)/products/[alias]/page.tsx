@@ -11,14 +11,10 @@ export async function generateStaticParams() {
   
   const menu = await getMenu(0);
 
-  const result = menu.flatMap((item) => item.pages.map((page) => ({
+  return menu.flatMap((item) => item.pages.map((page) => ({
     alias: page.alias
   })));
 
-  console.log(result);
-
-  return result;
-  
 }
 
 export default async function ProductCard({ params } : { params: { alias: string } }): Promise<JSX.Element> {
