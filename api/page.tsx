@@ -15,5 +15,8 @@ export async function getPage(alias: string): Promise<TopPageModel | null> {
     return null;
   }
 
+  console.log('gen page', alias);
+
+
   return res.json();
 }
