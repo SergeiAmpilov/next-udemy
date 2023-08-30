@@ -53,14 +53,14 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
                 <span>{m.name}</span>
               </div>
             </a>
-            { m.id == category && buildSecondLevel() }
+            { m.id == category && buildSecondLevel(m) }
           </div>          
         )) }
       </>
     );
   }
 
-  const buildSecondLevel = (): JSX.Element => {
+  const buildSecondLevel = (menuFirst: FirstLevelMenuItem): JSX.Element => {
     return (
       <div>
         { menu.map((m) => (
@@ -71,7 +71,7 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
             <div className={cn(styles.secondLevelBlock, {
               [styles.secondLevelBlockOpened]: m.isOpened,
             })}>
-              { buildThirdLevel(m.pages) }
+              { buildThirdLevel(m.pages, menuFirst.route) }
             </div>
           </div>
         ))}
@@ -79,8 +79,23 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
     );
   }
 
-  const buildThirdLevel = (pages: PageItem[]): JSX.Element => {
-    return (<></>);
+  const buildThirdLevel = (pages: PageItem[], route: string): JSX.Element => {
+    return (
+      <>
+        { pages.map(page => (
+          <div>
+            <a  key={page._id} 
+                href={`/${route}/${page.alias}`}
+                className={cn(styles.thirdLevel, {
+                  [styles.thirdLevelActive]: true
+                })}
+            >
+              {page.category}
+            </a>
+          </div>
+        ))}
+      </>
+    );
   }
 
   return (
