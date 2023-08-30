@@ -87,7 +87,7 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
             <a  key={page._id} 
                 href={`/${route}/${page.alias}`}
                 className={cn(styles.thirdLevel, {
-                  [styles.thirdLevelActive]: true
+                  [styles.thirdLevelActive]: false
                 })}
             >
               {page.category}

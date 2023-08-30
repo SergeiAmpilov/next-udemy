@@ -12,6 +12,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  margin-top: 20px;
 }
 
 .firstLevelActive,
@@ -39,4 +41,23 @@
   font-weight: 300;
   line-height: normal;
   color: var(--gray-dark);
+}
+
+.secondLevelBlockOpened:last-child {
+  margin-bottom: 20px;
+}
+
+.thirdLevel {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: var(--gray-dark);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.thirdLevelActive,
+.thirdLevel:hover {
+  color: var(--primary);
 }
