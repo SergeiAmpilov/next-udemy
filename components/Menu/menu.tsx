@@ -64,7 +64,7 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
     return (
       <div>
         { menu.map((m) => (
-          <div key={m._id.secondCategory}>
+          <div key={m._id.secondCategory} className={styles.seconsBlock}>
             <div className={styles.secondLevel}>
               {m._id.secondCategory}
             </div>
@@ -100,7 +100,7 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
 
   return (
     <div
-      className={cn(className)}
+      className={cn(styles.menu, className)}
       {...props}
     >
       { buildFirstLevel() }
