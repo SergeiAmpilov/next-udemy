@@ -2,7 +2,7 @@ import { getMenu } from "@/api/menu";
 import { MenuProps } from "./Menu.props";
 import cn from 'classnames';
 import styles from './Menu.module.css';
-import { FirstLevelMenuItem, MenuItem } from "@/interfaces/menu.interface";
+import { FirstLevelMenuItem, MenuItem, PageItem } from "@/interfaces/menu.interface";
 import CoursesIcon from './icons/courses.svg';
 import ServicesIcon from './icons/services.svg';
 import BooksIcon from './icons/books.svg';
@@ -40,16 +40,55 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
 
   const menu: MenuItem[] = await getMenu(category);
   
+  const buildFirstLevel = (): JSX.Element => {
+    return (
+      <>
+        { firstLevelMenu.map((m) => (
+          <div key={m.route}>
+            <a href={`/${m.route}`}>
+              <div className={cn(styles.firstLevel, {
+                [styles.firstLevelActive]: m.id == category,
+              })}>
+                {m.icon}
+                <span>{m.name}</span>
+              </div>
+            </a>
+            { m.id == category && buildSecondLevel() }
+          </div>          
+        )) }
+      </>
+    );
+  }
+
+  const buildSecondLevel = (): JSX.Element => {
+    return (
+      <div>
+        { menu.map((m) => (
+          <div key={m._id.secondCategory}>
+            <div className={styles.secondLevel}>
+              {m._id.secondCategory}
+            </div>
+            <div className={cn(styles.secondLevelBlock, {
+              [styles.secondLevelBlockOpened]: m.isOpened,
+            })}>
+              { buildThirdLevel(m.pages) }
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  const buildThirdLevel = (pages: PageItem[]): JSX.Element => {
+    return (<></>);
+  }
+
   return (
     <div
       className={cn(className)}
       {...props}
     >
-      <ul>
-        { 
-          menu.map((m, i) => (<li key={i}>{m._id.secondCategory}</li>)) 
-        }
-      </ul>
+      { buildFirstLevel() }
     </div>
   );
 
