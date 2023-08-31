@@ -8,6 +8,7 @@ import ServicesIcon from './icons/services.svg';
 import BooksIcon from './icons/books.svg';
 import ProductsIcon from './icons/product.svg';
 import { TopLevelCategory } from "@/interfaces/top-page.interface";
+import Link from "next/link";
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -84,14 +85,15 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
       <>
         { pages.map(page => (
           <div>
-            <a  key={page._id} 
-                href={`/${route}/${page.alias}`}
-                className={cn(styles.thirdLevel, {
-                  [styles.thirdLevelActive]: false
-                })}
+            <Link
+              key={page._id}
+              href={`/${route}/${page.alias}`}
+              className={cn(styles.thirdLevel, {
+                [styles.thirdLevelActive]: false
+              })}
             >
               {page.category}
-            </a>
+            </Link>
           </div>
         ))}
       </>
