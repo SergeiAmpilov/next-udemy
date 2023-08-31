@@ -46,14 +46,14 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
       <>
         { firstLevelMenu.map((m) => (
           <div key={m.route}>
-            <a href={`/${m.route}`}>
+            <Link href={`/${m.route}`}>
               <div className={cn(styles.firstLevel, {
                 [styles.firstLevelActive]: m.id == category,
               })}>
                 {m.icon}
                 <span>{m.name}</span>
               </div>
-            </a>
+            </Link>
             { m.id == category && buildSecondLevel(m) }
           </div>          
         )) }
