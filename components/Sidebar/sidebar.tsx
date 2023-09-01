@@ -2,16 +2,24 @@ import { SidebarProps } from "./sidebar.props";
 import styles from './sidebar.module.css';
 import { Menu } from "../Menu/menu";
 import { TopLevelCategory } from "@/interfaces/top-page.interface";
+import { MenuItem } from "@/interfaces/menu.interface";
+import { getMenu } from "@/api/menu";
 
 
 
-export default function Sidebar({ children, ...props }: SidebarProps): JSX.Element {
+export default async function Sidebar({ children, ...props }: SidebarProps): Promise<JSX.Element> {
+
+  const menu: MenuItem[] = await getMenu(TopLevelCategory.Courses);
+
   
   return (
       <div
         {...props}
       >
-        <Menu category={TopLevelCategory.Courses} />
+        <Menu 
+          category={TopLevelCategory.Courses} 
+          menu={menu}
+        />
         {children }
       </div>
   );

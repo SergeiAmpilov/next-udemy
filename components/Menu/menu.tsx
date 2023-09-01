@@ -1,3 +1,5 @@
+'use client'
+
 import { getMenu } from "@/api/menu";
 import { MenuProps } from "./Menu.props";
 import cn from 'classnames';
@@ -9,6 +11,7 @@ import BooksIcon from './icons/books.svg';
 import ProductsIcon from './icons/product.svg';
 import { TopLevelCategory } from "@/interfaces/top-page.interface";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -37,9 +40,12 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
   },
 ];
 
-export async function Menu({ category = 0, className, ...props }: MenuProps): Promise<JSX.Element> {
+export function Menu({ menu, category = 0, className, ...props }: MenuProps): JSX.Element {
 
-  const menu: MenuItem[] = await getMenu(category);
+  // const menu: MenuItem[] = await getMenu(category);
+
+  const router = useRouter();
+  const pathName = usePathname();
   
   const buildFirstLevel = (): JSX.Element => {
     return (
@@ -64,18 +70,18 @@ export async function Menu({ category = 0, className, ...props }: MenuProps): Pr
   const buildSecondLevel = (menuFirst: FirstLevelMenuItem): JSX.Element => {
     return (
       <div>
-        { menu.map((m) => (
+        { menu.map((m, i) => { return (
           <div key={m._id.secondCategory} className={styles.seconsBlock}>
             <div className={styles.secondLevel}>
               {m._id.secondCategory}
             </div>
             <div className={cn(styles.secondLevelBlock, {
-              [styles.secondLevelBlockOpened]: m.isOpened,
+              [styles.secondLevelBlockOpened]: m.pages.map(p => p.alias).includes(pathName.split('/')[2]),
             })}>
               { buildThirdLevel(m.pages, menuFirst.route) }
             </div>
           </div>
-        ))}
+        )})}
       </div>
     );
   }
