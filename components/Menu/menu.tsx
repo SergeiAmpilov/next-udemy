@@ -90,9 +90,8 @@ export function Menu({ menu, category = 0, className, ...props }: MenuProps): JS
     return (
       <>
         { pages.map(page => (
-          <div>
-            <Link
-              key={page._id}
+          <div key={page._id}>
+            <Link              
               href={`/${route}/${page.alias}`}
               className={cn(styles.thirdLevel, {
                 [styles.thirdLevelActive]: false
