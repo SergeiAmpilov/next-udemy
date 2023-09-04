@@ -42,9 +42,7 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
 
 export function Menu({ menu, category = 0, className, ...props }: MenuProps): JSX.Element {
 
-  // const menu: MenuItem[] = await getMenu(category);
 
-  const router = useRouter();
   const pathName = usePathname();
   
   const buildFirstLevel = (): JSX.Element => {
@@ -94,7 +92,7 @@ export function Menu({ menu, category = 0, className, ...props }: MenuProps): JS
             <Link              
               href={`/${route}/${page.alias}`}
               className={cn(styles.thirdLevel, {
-                [styles.thirdLevelActive]: false
+                [styles.thirdLevelActive]: `/${route}/${page.alias}` == pathName
               })}
             >
               {page.category}

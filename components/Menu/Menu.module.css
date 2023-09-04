@@ -28,6 +28,14 @@
   border-left: 1px solid #DFDFDF;
 }
 
+.secondLevelBlock {
+  display: none;
+}
+
+.secondLevelBlockOpened {
+  display: block;
+}
+
 .secondLevel {
   margin-bottom: 10px;
   cursor: pointer;
