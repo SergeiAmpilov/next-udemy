@@ -31,8 +31,6 @@ export default async function ProductCard({ params } : { params: { alias: string
     notFound();
   }
 
-  // console.log(page.category);
-
   const products = await getProduct(page.category);
 
 
