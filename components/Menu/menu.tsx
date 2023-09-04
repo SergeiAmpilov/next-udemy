@@ -1,50 +1,22 @@
 'use client'
 
-import { getMenu } from "@/api/menu";
 import { MenuProps } from "./Menu.props";
 import cn from 'classnames';
 import styles from './Menu.module.css';
 import { FirstLevelMenuItem, MenuItem, PageItem } from "@/interfaces/menu.interface";
-import CoursesIcon from './icons/courses.svg';
-import ServicesIcon from './icons/services.svg';
-import BooksIcon from './icons/books.svg';
-import ProductsIcon from './icons/product.svg';
-import { TopLevelCategory } from "@/interfaces/top-page.interface";
+
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { firstLevelMenu } from "@/helpers/helpers";
 
-const firstLevelMenu: FirstLevelMenuItem[] = [
-  {
-    route: 'courses',
-    name: 'Курсы',
-    icon: <CoursesIcon />,
-    id: TopLevelCategory.Courses
-  },
-  {
-    route: 'services',
-    name: 'Сервисы',
-    icon: <ServicesIcon />,
-    id: TopLevelCategory.Services
-  },
-  {
-    route: 'books',
-    name: 'Книги',
-    icon: <BooksIcon />,
-    id: TopLevelCategory.Books
-  },
-  {
-    route: 'products',
-    name: 'Товары',
-    icon: <ProductsIcon />,
-    id: TopLevelCategory.Products
-  },
-];
+
 
 export function Menu({serverMenu, category = 0, className, ...props }: MenuProps): JSX.Element {
 
 
   const [menu, setMenu ] = useState(serverMenu);
+
   const pathName = usePathname();
 
   const openSecondLevel = (secondCategory: string) => {
@@ -58,6 +30,7 @@ export function Menu({serverMenu, category = 0, className, ...props }: MenuProps
       })
     )
   };
+
   
   const buildFirstLevel = (): JSX.Element => {
     return (
@@ -88,7 +61,8 @@ export function Menu({serverMenu, category = 0, className, ...props }: MenuProps
               {m._id.secondCategory}
             </div>
             <div className={cn(styles.secondLevelBlock, {
-              [styles.secondLevelBlockOpened]: m.pages.map(p => p.alias).includes(pathName.split('/')[2]),
+              // [styles.secondLevelBlockOpened]: m.pages.map(p => p.alias).includes(pathName.split('/')[2]),
+              [styles.secondLevelBlockOpened]: true,
             })}>
               { buildThirdLevel(m.pages, menuFirst.route) }
             </div>
