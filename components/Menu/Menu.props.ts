@@ -4,5 +4,6 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
 export interface MenuProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   category?: TopLevelCategory;
-  menu: MenuItem[];
+  serverMenu: MenuItem[];
+  // setMenu: (newMenu: MenuItem[]) => void;
 }

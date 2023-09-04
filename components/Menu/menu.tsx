@@ -12,6 +12,7 @@ import ProductsIcon from './icons/product.svg';
 import { TopLevelCategory } from "@/interfaces/top-page.interface";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -40,10 +41,23 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
   },
 ];
 
-export function Menu({ menu, category = 0, className, ...props }: MenuProps): JSX.Element {
+export function Menu({serverMenu, category = 0, className, ...props }: MenuProps): JSX.Element {
 
 
+  const [menu, setMenu ] = useState(serverMenu);
   const pathName = usePathname();
+
+  const openSecondLevel = (secondCategory: string) => {
+    setMenu(
+      menu.map(m => {
+        if (m._id.secondCategory == secondCategory) {
+          m.isOpened = !m.isOpened;
+        }
+
+        return m;
+      })
+    )
+  };
   
   const buildFirstLevel = (): JSX.Element => {
     return (
@@ -70,7 +84,7 @@ export function Menu({ menu, category = 0, className, ...props }: MenuProps): JS
       <div>
         { menu.map((m, i) => { return (
           <div key={m._id.secondCategory} className={styles.seconsBlock}>
-            <div className={styles.secondLevel}>
+            <div className={styles.secondLevel} onClick={() => openSecondLevel(m._id.secondCategory) }>
               {m._id.secondCategory}
             </div>
             <div className={cn(styles.secondLevelBlock, {

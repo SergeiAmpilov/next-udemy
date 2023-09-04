@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import Logo from '../public/Group13.svg';
 import { API } from './api';
 import { MenuItem } from '@/interfaces/menu.interface';
+import Link from 'next/link';
 
 // export const metadata: Metadata = {
 //   title: 'My app ppage',
@@ -53,6 +54,7 @@ export default async function Home(): Promise<JSX.Element> {
       <div>
         {/* <Rating rating={rating} isEditable={true} setRating={setRating} /> */}
       </div>
+      <Link href={'/search'}>Search</Link>
     </div>
   );
 

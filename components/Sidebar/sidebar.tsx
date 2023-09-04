@@ -10,7 +10,6 @@ import { getMenu } from "@/api/menu";
 export default async function Sidebar({ children, ...props }: SidebarProps): Promise<JSX.Element> {
 
   const menu: MenuItem[] = await getMenu(TopLevelCategory.Courses);
-
   
   return (
       <div
@@ -18,7 +17,7 @@ export default async function Sidebar({ children, ...props }: SidebarProps): Pro
       >
         <Menu 
           category={TopLevelCategory.Courses} 
-          menu={menu}
+          serverMenu={menu}
         />
         {children }
       </div>
